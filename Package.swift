@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "VanillaMUD",
     dependencies: [
-        .package(url: "https://github.com/powerje/TelnetKit.git", from: "0.0.1"),
+        .package(url: "https://github.com/powerje/TelnetKit.git", .branch("blue_sockets")),
         .package(url: "https://github.com/Nike-Inc/Willow.git", from: "5.0.2"),
     ],
     targets: [
