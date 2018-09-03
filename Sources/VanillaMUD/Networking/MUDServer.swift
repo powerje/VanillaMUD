@@ -3,25 +3,52 @@ import TelnetKit
 
 class MUDServer {
 
+    var connections = [Connection]()
+
     func serve() {
         print("Starting server...")
         let server = TelnetServer() { [unowned self] in
-            self.beginEcho(client: $0)
+            self.addConnection(connection: $0)
         }
-        server.serve()
+        DispatchQueue.global().async { server.serve() }
+
+        while true {
+            self.gameLoop()
+            usleep(500000)
+        }
     }
 
-    private func beginEcho(client: TelnetClient) {
-        while client.connected {
-            if let input = client.read() {
+    private func gameLoop() {
+        print("loopin'")
+    }
+
+    private func addConnection(connection: Connection) {
+        connections.append(connection)
+        while connection.connected {
+            if let input = connection.read() {
                 if input.trimmingCharacters(in: .whitespacesAndNewlines) == "quit" {
-                    client.write(string: "buh bye!\n")
-                    client.disconnect()
+                    connection.write(string: "buh bye!\n")
+                    connection.disconnect()
+                } else if input.trimmingCharacters(in: .whitespacesAndNewlines) == "shutdown" {
+                    exit(0)
                 } else {
-                    client.write(string: input)
+                    self.echoAll(from: connection, message: input)
                 }
+            }
+        }
+        for (index, other) in connections.enumerated() {
+            if other === connection {
+                connections.remove(at: index)
+                break
             }
         }
     }
 
+    private func echoAll(from connection: Connection, message: String) {
+        for connection in connections {
+            connection.write(string: "\(connection.domain()): \(message)")
+        }
+    }
+
 }
+
