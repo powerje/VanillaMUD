@@ -1,13 +1,15 @@
 import Foundation
 import TelnetKit
+import Willow
 
 class MUDServer {
 
-    var connections = [Connection]()
+    private static let port = 9000
+    private (set) var connections = [Connection]()
 
     func serve() {
-        print("Starting server...")
-        let server = TelnetServer() { [unowned self] in
+        log.eventMessage("Starting server on port \(MUDServer.port)")
+        let server = TelnetServer(port: MUDServer.port) { [unowned self] in
             self.addConnection(connection: $0)
         }
         DispatchQueue.global().async { server.serve() }
@@ -19,7 +21,7 @@ class MUDServer {
     }
 
     private func gameLoop() {
-        print("loopin'")
+        
     }
 
     private func addConnection(connection: Connection) {
