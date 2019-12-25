@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
         "state": {
           "branch": null,
-          "revision": "15ff39f95e0b56058cf050c910c1e26002d01f71",
-          "version": "1.0.15"
+          "revision": "c46a3d41f5b2401d18bcb46d0101cdc5cd13e307",
+          "version": "1.0.52"
         }
       },
       {
@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/powerje/TelnetKit.git",
         "state": {
           "branch": "blue_sockets",
-          "revision": "7326ccb2e9ef52c395cc5118d1b0a4a5cd85fe98",
+          "revision": "4eb450b59b2eb12518ac8e445d05da79973daa19",
           "version": null
         }
       },
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/Nike-Inc/Willow.git",
         "state": {
           "branch": null,
-          "revision": "bee75d06f0e94a7053a790f0327220d53f075758",
-          "version": "5.0.2"
+          "revision": "67c567faf21f578149c030bb8e740ab87d11c508",
+          "version": "5.2.1"
         }
       }
     ]

@@ -17,4 +17,8 @@ protocol Connection: AnyObject {
     func ip() -> String
 }
 
-extension TelnetClient: Connection {}
+extension TelnetClient: Connection {
+    func read() -> String? {
+        return readString()
+    }
+}
