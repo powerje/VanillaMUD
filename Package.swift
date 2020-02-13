@@ -10,12 +10,11 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/powerje/TelnetKit.git", .branch("blue_sockets")),
-        .package(url: "https://github.com/Nike-Inc/Willow.git", from: "5.0.2"),
     ],
     targets: [
         .target(
             name: "VanillaMUD",
-            dependencies: ["TelnetKit", "Willow"]),
+            dependencies: ["TelnetKit"]),
         .testTarget(
             name: "VanillaMUDTests",
             dependencies: ["VanillaMUD"]),

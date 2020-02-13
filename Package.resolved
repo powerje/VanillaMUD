@@ -15,17 +15,8 @@
         "repositoryURL": "https://github.com/powerje/TelnetKit.git",
         "state": {
           "branch": "blue_sockets",
-          "revision": "85e6922ce45e7d6bbf76c7a44e3d629beccbd052",
+          "revision": "f33578e40b9e597872744a10d3d6195472ff9f91",
           "version": null
-        }
-      },
-      {
-        "package": "Willow",
-        "repositoryURL": "https://github.com/Nike-Inc/Willow.git",
-        "state": {
-          "branch": null,
-          "revision": "67c567faf21f578149c030bb8e740ab87d11c508",
-          "version": "5.2.1"
         }
       }
     ]

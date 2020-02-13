@@ -1,6 +1,5 @@
 import Foundation
 import TelnetKit
-import Willow
 
 class MUDServer {
 
@@ -8,7 +7,7 @@ class MUDServer {
     private (set) var connections = [Connection]()
 
     func serve() {
-        log.eventMessage("Starting server on port \(MUDServer.port)")
+        print("Starting server on port \(MUDServer.port)")
         let server = TelnetServer(port: MUDServer.port) { [unowned self] in
             self.addConnection(connection: $0)
         }
