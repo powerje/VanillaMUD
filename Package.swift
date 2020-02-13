@@ -1,10 +1,13 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "VanillaMUD",
+    platforms: [
+        .macOS(.v10_15),
+    ],
     dependencies: [
         .package(url: "https://github.com/powerje/TelnetKit.git", .branch("blue_sockets")),
         .package(url: "https://github.com/Nike-Inc/Willow.git", from: "5.0.2"),
