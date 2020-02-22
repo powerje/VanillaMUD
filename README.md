@@ -1,5 +1,8 @@
 # VanillaMUD
 
+![](https://github.com/powerje/VanillaMUD/workflows/Swift/badge.svg)
+
+
 ## Tools
 
 ### macOS
