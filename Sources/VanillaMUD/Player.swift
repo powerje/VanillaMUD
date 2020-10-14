@@ -6,7 +6,7 @@ struct Player {
 }
 
 extension Player {
-    func write(string: String) {
+    func write(_ string: String) {
         connection?.write(string)
     }
 }

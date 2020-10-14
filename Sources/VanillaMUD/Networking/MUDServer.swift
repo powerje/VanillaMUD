@@ -4,9 +4,9 @@ import TelnetKit
 class MUDServer {
 
     private static let port = 9000
-    private (set) var connections = [Connection]()
+    @Atomic private (set) var connections = [Connection]()
     var players: [Player] {
-        return connections.compactMap {
+        connections.compactMap {
             if case let .playing(player) = $0.state { return player }
             return nil
         }
@@ -53,10 +53,11 @@ class MUDServer {
                 let command = input.trimmed
                 print("COMMAND: \(command)")
                 if command == "quit" {
-                    connection.write("buh bye!\n")
+                    player.write("buh bye!\n")
                     connection.disconnect()
                 } else if command == "shutdown" {
-                    connection.write("Shutting down\n")
+                    player.write("RIP\n")
+                    echoAll("Shutdown by \(player.name)")
                     self.running = false
                 } else {
                     self.echoAll("<\(player.name)> \(input)")
@@ -66,14 +67,14 @@ class MUDServer {
     }
 
     private func addConnection(connection: Connection) {
-        connections.append(connection)
+        $connections.mutate { $0.append(connection) }
         Greeting.writeGreeting(to: connection)
         while connection.connected {
             connection.readInput()
         }
         for (index, other) in connections.enumerated() {
             if other == connection {
-                connections.remove(at: index)
+                $connections.mutate { $0.remove(at: index) }
                 break
             }
         }
