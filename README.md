@@ -7,7 +7,7 @@
 
 ### macOS
 
-Install Xcode 11.3+ and you _should_ be good.
+Install Xcode 12.1+ and you _should_ be good.
 
 ### Ubuntu 18.04
 
