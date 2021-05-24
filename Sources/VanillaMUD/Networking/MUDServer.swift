@@ -49,6 +49,7 @@ class MUDServer {
                 let player = Player(connection: connection, name: name)
                 print("Logging in with password: \(input.trimmed)")
                 connection.state = .playing(player)
+                Room.move(player, to: player.startRoomId)
             case let .playing(player):
                 let command = input.trimmed
                 print("COMMAND: \(command)")
