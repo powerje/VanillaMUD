@@ -1,6 +1,6 @@
 # VanillaMUD
 
-![macOS](https://github.com/powerje/VanillaMUD/workflows/Swift/badge.svg) ![Ubuntu](https://github.com/powerje/VanillaMUD/workflows/Ubuntu/badge.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![macOS](https://github.com/powerje/VanillaMUD/workflows/Swift/badge.svg)](https://github.com/powerje/VanillaMUD/actions/workflows/swift.yml) [![Ubuntu](https://github.com/powerje/VanillaMUD/workflows/Ubuntu/badge.svg)](https://github.com/powerje/VanillaMUD/actions/workflows/ubuntu.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 ## Tools
